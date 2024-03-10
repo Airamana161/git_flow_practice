@@ -1,0 +1,16 @@
+#Bien, hasta aquí no hay nada nuevo. Creamos el job, Mi primer job, y definimos el SO en el que debe correr para las Github actions. Ahora vamos a añadir un paso o step en donde realizaremos una impresión simple por pantalla.
+name: Mi primer intento
+on:
+    push:
+        branches: [ master ] #cuando se haga el push en master
+jobs:
+    Mi-primer-job:
+        name: Mi primer job
+        runs-on: ubuntu-latest #SO en el que corre las github actions
+        steps:
+            - name: Imprimir 
+              env:
+                MI_VARIABLE: Hola mundo
+              run: |
+                echo $MI_VARIABLE.
+        
